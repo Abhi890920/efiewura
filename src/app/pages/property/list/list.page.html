@@ -1,0 +1,122 @@
+<ion-header>
+	<div class="header">
+		<ion-toolbar>
+			<ion-buttons slot="start">
+				<div class="blank-button"></div>
+			</ion-buttons>
+			<ion-title>Property List</ion-title>
+			<!-- <ion-buttons slot="end" (click)="filterPage()">
+				<div class="header-button"><i class="fas fa-fw fa-filter"></i></div>
+			</ion-buttons> -->
+		</ion-toolbar>
+	</div>
+</ion-header>
+<div class="alert-html"></div>
+<ion-content>
+	<ion-refresher slot="fixed" (ionRefresh)="getProperty($event,'pull')">
+    	<ion-refresher-content></ion-refresher-content>
+  	</ion-refresher>
+	<div class="page-content">
+		<!-- <div class="search">
+			<div class="search-content">
+				<div class="input-wrap"><input type="text" class="input-field" placeholder="Search keywords" [(ngModel)]="keyword"/></div>
+				<div class="input-action"><i class="fal fa-fw fa-search"></i></div>
+			</div>
+		</div> -->
+		<div class="event-wrap">
+			<div class="event-listings" *ngIf="propertyList?.length>0">
+				<ng-container *ngFor="let property of propertyList">
+					<div class="item">
+						<div class="item-wishlist">{{property.property_category}}</div>
+						<div class="item-content">
+							<div class="item-image-wrap">
+								<div class="item-image"><img src="{{property.property_images.img1}}" alt="" onError="this.src='assets/images/event.jpg'"/></div>
+								<!-- <div class="item-countdown">
+									<div class="countdown">
+										<div class="count">48</div>
+										<div class="title">Hours</div>
+									</div>
+									<div class="countdown">
+										<div class="count">34</div>
+										<div class="title">Minutes</div>
+									</div>
+									<div class="countdown">
+										<div class="count">45</div>
+										<div class="title">Seconds</div>
+									</div>
+								</div> -->
+								<div class="item-particulars">
+									<div class="item-title">{{property.property_title}}</div>
+									<div class="item-subtitle">Boosted Ad</div>
+									<div class="item-text">{{property.property_cost}}</div>
+								</div>
+							</div>
+							<div class="item-meta">
+								<div class="item-date">
+									<i class="fas fa-fw fa-bed"></i>
+									<span>{{property.property_beds}} Bed(s)</span>
+								</div>
+								<div class="item-time">
+									<i class="fas fa-fw fa-bath"></i>
+									<span>{{property.property_baths}} Bathroom(s)</span>
+								</div>
+								<!-- <div class="item-distance">
+									<i class="fas fa-fw fa-map-marker-alt"></i>
+									<span>2.4 Km</span>
+								</div> -->
+								<div class="item-location">
+									<i class="fas fa-fw fa-map-marker-alt"></i>
+									<span>{{property.property_region}} {{property.property_city}}</span>
+								</div>
+								<div class="item-action">
+									<div class="btn-action" (click)="navDetails(property.property_id)">Event Detail</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</ng-container>
+			</div>
+			
+		</div>
+		<div class="nodata-content" *ngIf="propertyList?.length==0">
+			<div class="nodata-wrap">
+				<div class="icon"><i class="fal fa-fw fa-receipt"></i></div>
+				<div class="title">No Event found</div>
+				<div class="text">It seems there is no event according to search</div>
+			</div>
+		</div>
+		<ion-infinite-scroll threshold="100px" (ionInfinite)="loadData($event)">
+		    <ion-infinite-scroll-content
+		      loadingSpinner="bubbles"
+		      loadingText="Loading more data...">
+		    </ion-infinite-scroll-content>
+  		</ion-infinite-scroll>
+		
+	</div>
+	<!-- <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="isLastRecord == 1">
+		<ion-infinite-scroll-content></ion-infinite-scroll-content>
+	</ion-infinite-scroll> -->
+</ion-content>
+<div class=loader *ngIf="showspinner==true">
+  <div class="preloader"><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+<ion-footer>
+	<div class="footer-menu">
+		<div class="item active">
+			<div class="item-icon"><i class="fad fa-home"></i></div>
+			<div class="item-title">Home</div>
+		</div>
+		<div class="item">
+			<div class="item-icon"><i class="fad fa-shapes"></i></div>
+			<div class="item-title">Category</div>
+		</div>
+		<div class="item">
+			<div class="item-icon"><i class="fad fa-fw fa-comment-alt-lines"></i></div>
+			<div class="item-title">Messages</div>
+		</div>
+		<div class="item" (click)="navPage('profile')">
+			<div class="item-icon"><i class="fad fa-user"></i></div>
+			<div class="item-title">Profile</div>
+		</div>
+	</div>
+</ion-footer>

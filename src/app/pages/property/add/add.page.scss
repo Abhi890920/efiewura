@@ -1,0 +1,20 @@
+app-add{
+ion-header{}
+	ion-header{
+		.header{ border: 0;}
+		.header{
+			ion-toolbar{--background: #ff3a5c;}
+			ion-toolbar{
+				.toolbar-container .toolbar-content, .topbar-title, ion-title{color: #fff;font-size: 18px;font-family: 'Roboto', sans-serif;;font-weight: 400;text-transform: capitalize;padding: 0;line-height: 1.2;text-align: center;}
+				.back-button{font-size: 24px; color: #fff;}
+				.header-button{font-size: 14px; color: #fff;}
+			}
+		}
+	}
+	.page-content{position: relative;padding: 0;background: #fff;min-height: 100%; transition: all 0.3s ease;}
+	.page-content{}
+}
+.page-action{position: relative;bottom: 0;z-index: 1;display: flex;}
+.page-action{
+	.btn-action{border-radius: 0;padding: 16px;font-size: 16px;font-weight: 500;text-transform: uppercase;}
+}

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "887275935218",
+    "project_id": "efiewura-aeefe",
+    "storage_bucket": "efiewura-aeefe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:887275935218:android:6eeeb254dea9f2cee1476b",
+        "android_client_info": {
+          "package_name": "com.hskgroupafrica.efiewura"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "887275935218-ullq8bkhgu3hnbp49lsqcsp09sm6jh39.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCJk9-qVwMxl-sBYb5ZGrnHxpP1nV3HtZE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "887275935218-ullq8bkhgu3hnbp49lsqcsp09sm6jh39.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

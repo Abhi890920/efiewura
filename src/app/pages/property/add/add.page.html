@@ -1,0 +1,140 @@
+<ion-header>
+	<div class="header">
+		<ion-toolbar>
+			<ion-buttons slot="start">
+				<div class="back-button" (click)="navPop()">
+					<i class="far fa-fw fa-chevron-left"></i>
+				</div>
+			</ion-buttons>
+			<ion-title>Property Add</ion-title>
+		</ion-toolbar>
+	</div>
+</ion-header>
+
+<ion-content>
+	<div class="page-content">
+		<div class="form-content">
+			<ion-item>
+				<ion-label>Select Category</ion-label>
+				<ion-select  [(ngModel)]="category_id" (ngModelChange)="getSubCategory($event)">
+					<ng-container *ngFor="let item of Category">
+						<ion-select-option value="{{item.category_id}}">{{item.category_name}}</ion-select-option>
+					</ng-container>
+				</ion-select>
+			</ion-item>
+			<ion-item *ngIf="category_id">
+				<ion-label>Select Sub Category</ion-label>
+				<ion-select [(ngModel)]="subcatgory_id">
+					<ng-container *ngFor="let item of subcatgory">
+						<ion-select-option value="{{item.sub_category_id}}">{{item.sub_category_name}}</ion-select-option>
+					</ng-container>
+				</ion-select>
+			</ion-item>
+			<div class="form-group">
+				<label class="control-label">Title</label>
+				<div class="input-wrap">
+					<input type="text" class="form-control" [(ngModel)]="title"/>
+				</div>
+			</div>
+			<ion-item>
+				<ion-label>Region</ion-label>
+				<ion-select [(ngModel)]="region_id">
+					<ng-container *ngFor="let item of RegionList">
+						<ion-select-option value="{{item.id}}">{{item.region}}</ion-select-option>
+					</ng-container>
+				</ion-select>
+			</ion-item>
+			<ion-item>
+				<ion-label>City</ion-label>
+				<ion-select [(ngModel)]="city_id">
+					<ng-container *ngFor="let item of CityList">
+						<ng-template [ngIf]="region_id==item.regionId">
+							<ion-select-option value="{{item.id}}">{{item.city}}</ion-select-option>
+						</ng-template>
+					</ng-container>
+				</ion-select>
+			</ion-item>
+			<div class="form-group">
+				<label class="control-label">Location</label>
+				<div class="input-wrap">
+					<input type="text" class="form-control" [(ngModel)]="location"/>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-3">
+					<div class="form-group">
+						<label class="control-label">Beds</label>
+						<div class="input-wrap">
+							<input type="text" class="form-control" [(ngModel)]="beds"/>
+						</div>
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="form-group">
+						<label class="control-label">Baths</label>
+						<div class="input-wrap">
+							<input type="text" class="form-control" [(ngModel)]="baths"/>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label">Area(sqr mtr)</label>
+				<div class="input-wrap">
+					<input type="number" class="form-control" [(ngModel)]="area"/>
+				</div>
+			</div>
+			<ion-item>
+				<ion-label>Select Currency</ion-label>
+				<ion-select [(ngModel)]="currency">
+					<ng-container *ngFor="let item of CurrencyList">
+						<ion-select-option value="{{item.currency_short_name}}">{{item.currency_short_name}}</ion-select-option>
+					</ng-container>
+				</ion-select>
+			</ion-item>
+			<div class="form-group">
+				<label class="control-label">Price</label>
+				<div class="input-wrap">
+					<input type="number" class="form-control" [(ngModel)]="price"/>
+				</div>
+			</div>
+			<ion-item>
+				<ion-label>Period</ion-label>
+				<ion-select [(ngModel)]="period">
+					<ng-container *ngFor="let item of Periods">
+						<ion-select-option value="{{item.periodValue}}">{{item.periodName}}</ion-select-option>
+					</ng-container>
+				</ion-select>
+			</ion-item>
+			<div class="form-group">
+				<label class="control-label">Advance In</label>
+				<div class="input-wrap">
+					<input type="number" class="form-control" [(ngModel)]="rent_advance"/>
+				</div>
+			</div>
+			<ion-item>
+				<ion-label>Select Advance </ion-label>
+				<ion-select [(ngModel)]="rent_advance_type">
+					<ng-container *ngFor="let item of advanceType">
+						<ion-select-option value="{{item.id}}">{{item.typeName}}</ion-select-option>
+					</ng-container>
+				</ion-select>
+			</ion-item>
+			<div class="form-group">
+				<label class="control-label">Details</label>
+				<div class="input-wrap">
+					<textarea class="form-control" [(ngModel)]="details"></textarea>
+				</div>
+			</div>
+			<input type="file" class="" id="profilePicture" (change)="onFileChange($event)">
+		</div>
+	</div>
+</ion-content>
+<div class=loader *ngIf="showspinner==true">
+  <div class="preloader"><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+<ion-footer>
+	<div class="page-action">
+		<button class="btn btn-primary btn-action" (click)="addProperty()">Save</button>
+	</div>
+</ion-footer>

@@ -1,0 +1,102 @@
+<ion-header>
+	<div class="header">
+		<ion-toolbar>
+			<ion-buttons slot="start">
+				<div class="back-button" (click)="navPop()">
+					<i class="far fa-fw fa-chevron-left"></i>
+				</div>
+			</ion-buttons>
+			<ion-title>My Account</ion-title>
+		</ion-toolbar>
+	</div>
+</ion-header>
+
+<ion-content>
+<!-- 	<div class="top-segment">
+    <div class="segment-item active"><span>Profile</span></div>
+    <div class="segment-item" (click)="navPage()"><span>Settings</span></div>
+  </div> -->
+  <ion-refresher slot="fixed" (ionRefresh)="getProfileData($event,'pull')">
+    	<ion-refresher-content></ion-refresher-content>
+  	</ion-refresher>
+	<div class="profile-content">
+		<div class="profile-picture-wrap">
+			<div class="profile-picture">
+				<div class="profile-img">
+					<img src="{{userDetails.image}}" alt="" *ngIf="userDetails.image"/>
+					<img src="assets/images/profile.jpg" alt="" *ngIf="!userDetails.image"/>
+				</div>
+				<!-- <div class="change-image" (click)="takePhoto()"><i class="fal fa-fw fa-camera-alt"></i></div> -->
+				<div class="change-image"><i class="fal fa-fw fa-camera-alt"></i></div>
+			</div>
+		</div>
+		<div class="form-content">
+			<div class="form-group">
+				<label class="control-label">Profile Name</label>
+				<div class="input-wrap">
+					<input type="text" class="form-control" [(ngModel)]="userDetails.name"/>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label">User Name</label>
+				<div class="input-wrap">
+					<input type="text" class="form-control" [(ngModel)]="userDetails.user_name" readonly />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label">Email</label>
+				<div class="input-wrap">
+					<input type="text" class="form-control" [(ngModel)]="userDetails.email" readonly />
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label">Phone</label>
+				<div class="input-wrap">
+					<input type="number" class="form-control" [(ngModel)]="userDetails.phone"/>
+				</div>
+			</div>
+			<div class="signout-content" *ngIf="user_type=='2'">
+				<div class="signout-wrap" (click)="navPage('add')">
+					<div class="icon"><i class="fal fa-fw fa-plus"></i></div>
+					<div class="title">Create Property</div>
+					<div class="icon"><i class="fal fa-fw fa-chevron-right"></i></div>
+				</div>
+			</div>
+			<div class="signout-content">
+				<div class="signout-wrap" (click)="logout()">
+					<div class="icon"><i class="fal fa-fw fa-sign-out"></i></div>
+					<div class="title">Logout</div>
+					<div class="icon"><i class="fal fa-fw fa-chevron-right"></i></div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- <div class="custom-actionsheet" id="confirm-option-picture">
+	<div class="custom-actionsheet-close"></div>
+	<div class="custom-actionsheet-dialog">
+		<div class="custom-actionsheet-content">
+			<div class="custom-actionsheet-header">Options</div>
+			<div class="custom-actionsheet-body">
+				<div class="actionsheet-options">
+					<div class="item" (click)="takePhoto(1)">
+						<div class="item-icon"><i class="fal fa-fw fa-camera"></i></div>
+						<div class="item-title">Camera</div>
+					</div>
+					<div class="item"  (click)="takePhoto(0)">
+						<div class="item-icon"><i class="fal fa-fw fa-images"></i></div>
+						<div class="item-title">Gallery</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> -->
+</ion-content>
+<div class=loader *ngIf="showspinner==true">
+  <div class="preloader"><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+<ion-footer>
+	<div class="page-action">
+		<button class="btn btn-primary btn-action" (click)="updateProfile()">Save</button>
+	</div>
+</ion-footer>

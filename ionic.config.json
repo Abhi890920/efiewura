@@ -1,5 +1,7 @@
 {
   "name": "efiewura",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
