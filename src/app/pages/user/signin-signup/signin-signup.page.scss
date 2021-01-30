@@ -1,96 +1,9 @@
-app-signin-signup{
-
-	.login-form-page{position: relative;padding: 16px;background-color:#d88e1a;min-height: 100%;}
-	.login-form-page{
-		.form-content{}
-		.form-content{
-			.btn-submit{font-weight: 600;text-transform: capitalize;padding: 10px 20px;height: 44px;font-size: 18px;}
-			.form-actions{ display: flex; justify-content: center;padding: 10px 0 0;}
-			.form-actions .btn-forgot-password{background: transparent;background: transparent;font-size: 13px;font-weight: 500;text-decoration: underline;color: #008489;}
-		}
-		.or-separator{margin: 30px 0 10px; }
-		.or-separator{
-			.or{display: flex;position: relative; z-index: 0;}
-			.or:before{content: '';position: absolute; max-width: 200px; width: 100%; height: 1px; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #000; opacity: 0.1;z-index: -1;}
-			.or span{display: block;margin: auto;background: #ecf2f3;color: #191919;width: 24px;height: 24px;text-align: center;line-height: 24px;font-size: 10px;text-transform: uppercase;font-weight: 300;border-radius: 50%;}
-			.or-separator-text{font-size: 14px;text-align: center;padding: 10px 0;font-weight: 300;text-transform: uppercase;}
-		}
-		.social-login{ display: flex; margin: 0 -5px; justify-content: center;}
-		.social-login{
-			.btn-social-login{display: flex;width: 100%; max-width: calc(50% - 10px); margin: auto 5px;padding: 8px 12px;background: #fff;border-radius: 6px;box-shadow: rgba(0,0,0,0.1) 0 1px 4px;}
-			.btn-social-login .icon{ width: 24px; height: 24px}
-			.btn-social-login .icon img{ width: 100%; height: 100%; object-fit: contain; object-position: center;}
-			.btn-social-login .btn-text{margin: auto; width: 100%; max-width: calc(100% - 24px);font-size: 14px;font-weight: 500;}
-		}
-	}
-	.register-form-page{position: relative;padding: 16px;background-color:#d88e1a;min-height: 100%;}
-	.register-form-page{
-		.form-content{}
-		.form-content{
-			.form-phone-section{display: flex;}
-			.form-phone-section .form-group:first-child{width:100%;margin-top:auto;max-width: 100px;margin-right: 10px;}
-			.form-phone-section .form-group:last-child{width:100%;margin-top:auto;max-width:calc(100% - 110px);}
-			.btn-phonecode{display: block;padding: 10px 0;width: 100%;background-color: transparent;text-align: left;font-size: 16px;font-weight: 400;border-bottom: 1px solid rgba(0,0,0,0.1);position: relative; line-height: 1.2;}
-			.btn-phonecode:before{content:"\f078";font-family: "Font Awesome 5 Pro";position: absolute; top: 50%;right: 0;transform: translateY(-50%) rotate(0deg);font-size: 12px;font-weight: 600;opacity: 0.3; transition: all 0.3s ease;}
-			.btn-phonecode:after{content:'';position: absolute; bottom: 0;left: 0; width: 100%; height: 1px; background:#008489;z-index: 1; transform: scale(0,1); transition: all 0.3s ease;}
-			.btn-phonecode.active:before{transform:translateY(-50%) rotate(-180deg);}
-			.btn-phonecode.active:after{transform: scale(1,1);}
-			.phonecode-list{display:none;position: relative;margin: 10px 0;max-height: 280px;overflow: auto;}
-			.phonecode-list{
-				.phonecode-search{position: sticky;display: flex;background-color: #fff; border: 1px solid rgba(0,0,0,0.1);border-radius: 0px;overflow: hidden;top: 0;z-index: 1;margin: 0 0 5px;}
-				.phonecode-search{
-					.search-icon{position: relative;width: 34px;height: 34px;margin: auto 0;display: flex;background-color: #fff;border-right: 1px solid rgba(0,0,0,0.1);font-size: 14px; color: #008489;}
-					.search-icon i{margin: auto;}
-					.search-input{position: relative;width: 100%;max-width: calc(100% - 38px);}
-					.search-input .form-control{position:relative;width: 100%;height: 100%;border: 0;padding: 6px 12px;font-size: 14px;color: #212121;}
-					.search-close{position:absolute;top: 50%;right: 6px;transform: translateY(-50%);background: #008489;font-size: 10px;font-weight: 300;text-transform: uppercase;padding: 4px 10px;border-radius: 3px; color: #fff;}
-				}
-				.radio-group{position: relative;z-index: 0;}
-			}
-			
-			.btn-submit{font-weight: 600;text-transform: capitalize;padding: 10px 20px;height: 44px;font-size: 18px;}
-		}
-		.or-separator{margin: 30px 0 10px; }
-		.or-separator{
-			.or{display: flex;position: relative; z-index: 0;}
-			.or:before{content: '';position: absolute; max-width: 200px; width: 100%; height: 1px; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #000; opacity: 0.1;z-index: -1;}
-			.or span{display: block;margin: auto;background: #ecf2f3;color: #191919;width: 24px;height: 24px;text-align: center;line-height: 24px;font-size: 10px;text-transform: uppercase;font-weight: 300;border-radius: 50%;}
-			.or-separator-text{font-size: 14px;text-align: center;padding: 10px 0;font-weight: 300;text-transform: uppercase;color: #212121;}
-		}
-		.social-login{ display: flex; margin: 0 -5px; justify-content: center;}
-		.social-login{
-			.btn-social-login{display: flex;width: 100%; max-width: calc(50% - 10px); margin: auto 5px;padding: 8px 12px;background: #fff;border-radius: 6px;box-shadow: rgba(0,0,0,0.1) 0 1px 4px;}
-			.btn-social-login .icon{ width: 24px; height: 24px}
-			.btn-social-login .icon img{ width: 100%; height: 100%; object-fit: contain; object-position: center;}
-			.btn-social-login .btn-text{margin: auto; width: 100%; max-width: calc(100% - 24px);font-size: 14px;font-weight: 500;}
-		}
-		.terms{margin: 30px 0;color: #212121;font-size: 12px;font-weight: 400;text-align: center;}
-		.terms span{font-weight: 500;}
-		.terms .links{font-weight: 500;color: #008489;text-decoration: none;}
-	} 
-	
-	
-.form-group .control-label {
-    color: #ffffff;
-}
-.form-group .form-control {
-    margin: 0;
-    width: 100%;
-    border: none;
-    background: none;
-    height: 30px;
-    font-size: 14px;
-    color: #fff;
-}
-}
-
 .navTab{
 	background: #fff;
 	border-radius: 20px 20px 0 0;
-	margin-top: 50px;
+	margin-top: 60px;
 	
 }
-
 
 ion-segment-button{
 	--indicator-box-shadow: #d88e1a!important;
@@ -101,5 +14,43 @@ ion-segment-button{
 	--background-checked: #d88e1a!important;
 	--color-checked: white;
 	--indicator-color : transparent!important;
-
 }
+
+ion-list{
+	--ion-item-background: none !important;
+}
+ion-input{
+	--background: none;
+}
+
+
+.logRegBlock{
+	position: relative;padding: 16px;background-color:#d88e1a;  min-height: calc(100vh - 165px);
+
+	.form-actions{ display: flex; justify-content: center;padding: 10px 0 0;}
+	.form-actions .btn-forgot-password{background: transparent;background: transparent;font-size: 13px;font-weight: 500;text-decoration: underline;color: #fff;}
+
+	.control-label {
+		color: #ffffff;
+	}
+	.custom-radio .custom-input-label{color: #fff;}
+	
+	.or-separator{margin: 30px 0 10px; }
+	.or-separator{
+		.or{display: flex;position: relative; z-index: 0;}
+		.or:before{content: '';position: absolute; max-width: 250px; width: 100%; height: 1px; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #ecf2f3; opacity: 0.9;z-index: -1;}
+		.or span{display: block;margin: auto;background: #ecf2f3;color: #191919;width: 24px;height: 24px;text-align: center;line-height: 24px;font-size: 10px;text-transform: uppercase;font-weight: 300;border-radius: 50%;}
+		.or-separator-text{font-size: 14px;text-align: center;padding: 10px 0;font-weight: 300;text-transform: uppercase;color: #212121;}
+	}
+	
+	.terms{margin: 30px 0;color: #fff;font-size: 12px;font-weight: 400;text-align: center;}
+	.terms span{font-weight: 500;}
+	.terms .links{font-weight: 500;color: #0d014d;text-decoration: none;}
+
+	.social-btn{
+		font-size: 10px; text-transform: inherit;
+		ion-icon{ margin-right: 4px;}
+	}
+}
+
+
