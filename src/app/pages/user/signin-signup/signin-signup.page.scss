@@ -1,5 +1,6 @@
 app-signin-signup{
-	.login-form-page{position: relative;padding: 16px;background-color:#fff;min-height: 100%;display: flex;flex-direction: column;justify-content: center;}
+
+	.login-form-page{position: relative;padding: 16px;background-color:#d88e1a;min-height: 100%;}
 	.login-form-page{
 		.form-content{}
 		.form-content{
@@ -22,7 +23,7 @@ app-signin-signup{
 			.btn-social-login .btn-text{margin: auto; width: 100%; max-width: calc(100% - 24px);font-size: 14px;font-weight: 500;}
 		}
 	}
-	.register-form-page{position: relative;padding: 16px;background-color:#fff;min-height: 100%;}
+	.register-form-page{position: relative;padding: 16px;background-color:#d88e1a;min-height: 100%;}
 	.register-form-page{
 		.form-content{}
 		.form-content{
@@ -66,5 +67,39 @@ app-signin-signup{
 		.terms{margin: 30px 0;color: #212121;font-size: 12px;font-weight: 400;text-align: center;}
 		.terms span{font-weight: 500;}
 		.terms .links{font-weight: 500;color: #008489;text-decoration: none;}
-	}
+	} 
+	
+	
+.form-group .control-label {
+    color: #ffffff;
+}
+.form-group .form-control {
+    margin: 0;
+    width: 100%;
+    border: none;
+    background: none;
+    height: 30px;
+    font-size: 14px;
+    color: #fff;
+}
+}
+
+.navTab{
+	background: #fff;
+	border-radius: 20px 20px 0 0;
+	margin-top: 50px;
+	
+}
+
+
+ion-segment-button{
+	--indicator-box-shadow: #d88e1a!important;
+	--indicator-background: #d88e1a!important;
+	margin: 0;
+	--background:white;
+	--color:#d88e1a;
+	--background-checked: #d88e1a!important;
+	--color-checked: white;
+	--indicator-color : transparent!important;
+
 }
