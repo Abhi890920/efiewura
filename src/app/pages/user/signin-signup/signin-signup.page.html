@@ -12,6 +12,7 @@
 </ion-header>
 
 <ion-content>
+
 	<ion-segment [(ngModel)]="segment_value" class="navTab">
 	  <ion-segment-button value="signin" (click)="segmentChange('signin')">
 	    <ion-label>Signin</ion-label>
@@ -22,126 +23,157 @@
 	</ion-segment>
 
 	<ng-template [ngIf]="segment_value=='signin'">
-		<div class="login-form-page">
+		<div class="login-form-page logRegBlock">
 			<div class="form-content">
 				<div class="form-group">
-			        <label class="control-label">Login Type</label>
+					<label class="control-label">Login Type</label>
+					
 			        <div class="radio-group">
-			          <div class="custom-radio">
-			            <input type="radio" name="radio-connect-01" value="2" class="custom-input-radio" (click)="connectMethod('2')" [(ngModel)]="user_type"/>
-			            <label class="custom-input-label">Agent</label>
-			          </div>
-			          <div class="custom-radio">
-			            <input type="radio" name="radio-connect-01" value="3" class="custom-input-radio" (click)="connectMethod('3')" 
-			            [(ngModel)]="user_type"/>
-			            <label class="custom-input-label">Customer</label>
-			          </div>
+						<ion-grid>
+							<ion-row>
+							  <ion-col>
+								 <div class="custom-radio">
+									<input type="radio" name="radio-connect-01" value="2" class="custom-input-radio" (click)="connectMethod('2')" [(ngModel)]="user_type"/>
+									<label class="custom-input-label">Agent</label>
+								  </div>
+							  </ion-col>
+							  <ion-col>
+								<div class="custom-radio">
+									<input type="radio" name="radio-connect-01" value="3" class="custom-input-radio" (click)="connectMethod('3')" 
+									[(ngModel)]="user_type"/>
+									<label class="custom-input-label">Customer</label>
+								  </div>
+							  </ion-col>
+							</ion-row>
+						</ion-grid>
 			        </div>
-			     </div>
-				<div class="form-group">
-					<label class="control-label">Email</label>
-					<div class="input-wrap">
-						<input type="text" class="form-control" [(ngModel)]="email"/>
-					</div>
+				 </div>
+
+				 <ion-list>
+					<ion-item>
+						<ion-icon name="mail-outline" color="light" slot="start"></ion-icon>
+						<ion-label color="light" position="floating">Email</ion-label>
+						<ion-input color="light" inputmode="email" [(ngModel)]="email" ></ion-input>
+					</ion-item>
+					<ion-item>
+						<ion-icon name="lock-closed-outline" color="light" slot="start"></ion-icon>
+						<ion-label color="light" position="floating">Password</ion-label>
+						<ion-input color="light" inputmode="password" [(ngModel)]="password" ></ion-input>
+					</ion-item>
+				</ion-list>
+
+				<div class="my-3">
+					<ion-button expand="block" color="blue"  (click)="signinFun()">Signup</ion-button>
 				</div>
-				<div class="form-group mb-4">
-					<label class="control-label">Password</label>
-					<div class="input-wrap">
-						<input type="password" class="form-control" [(ngModel)]="password"/>
-					</div>
-				</div>
-				<div class="form-group">
-					<button class="btn btn-primary btn-submit" (click)="signinFun()">Signin</button>
-				</div>
-				<!-- <div class="form-actions">
+
+				<div class="form-actions">
 					<button class="btn-forgot-password">Forgot Password</button>
-				</div> -->
+				</div>
 			</div>
-			<!-- <div class="or-separator">
+			<div class="or-separator">
 				<div class="or"><span>or</span></div>
-				<div class="or-separator-text">Signin using</div>
 			</div>
-			<div class="social-login">
-				<button class="btn-social-login">
-					<div class="icon"><img src="assets/icon/facebook-icon.svg" alt=""/></div>
-					<div class="btn-text">Facebook</div>
-				</button>
-				<button class="btn-social-login">
-					<div class="icon"><img src="assets/icon/google-icon.svg" alt=""/></div>
-					<div class="btn-text">Google</div>
-				</button>
-			</div> -->
+			<div class="d-flex justify-content-between">
+				<ion-button color="light" class="social-btn"  (click)="doGoogleLogin()"> 
+					<ion-icon name="logo-google"></ion-icon> 
+					Signin using Google 
+				</ion-button>
+				<ion-button  color="facebook" class="social-btn" (click)="fbLogin()"> 
+					<ion-icon name="logo-facebook"></ion-icon>
+					 Signin using Facebook
+				</ion-button>
+			</div>
 		</div>
 	</ng-template>
+
 	<ng-template [ngIf]="segment_value=='signup'">
-		<div class="register-form-page">
+		<div class="register-form-page logRegBlock">
 			<div class="form-content">
 				<div class="form-group">
-			        <label class="control-label">Login Type</label>
+					<label class="control-label">Login Type</label>
+					
 			        <div class="radio-group">
-			          <div class="custom-radio">
-			            <input type="radio" name="radio-connect-01" value="2" class="custom-input-radio" (click)="connectMethod('2')" [(ngModel)]="user_type"/>
-			            <label class="custom-input-label">Agent</label>
-			          </div>
-			          <div class="custom-radio">
-			            <input type="radio" name="radio-connect-01" value="3" class="custom-input-radio" (click)="connectMethod('3')" 
-			            [(ngModel)]="user_type"/>
-			            <label class="custom-input-label">Customer</label>
-			          </div>
+						<ion-grid>
+							<ion-row>
+							  <ion-col>
+								<div class="custom-radio">
+									<input type="radio" name="radio-connect-01" value="2" class="custom-input-radio" (click)="connectMethod('2')" [(ngModel)]="user_type"/>
+									<label class="custom-input-label">Agent</label>
+								  </div>
+							  </ion-col>
+							  <ion-col>
+								<div class="custom-radio">
+									<input type="radio" name="radio-connect-01" value="3" class="custom-input-radio" (click)="connectMethod('3')" 
+									[(ngModel)]="user_type"/>
+									<label class="custom-input-label">Customer</label>
+								  </div>
+							  </ion-col>
+							</ion-row>
+						</ion-grid>
+			          
+			          
 			        </div>
-			     </div>
-				<div class="form-group">
-					<label class="control-label">Enter Email</label>
-					<div class="input-wrap">
-						<input type="text" class="form-control" [(ngModel)]="email"/>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label">Full Name</label>
-					<div class="input-wrap">
-						<input type="text" class="form-control" [(ngModel)]="profile_name"/>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label">User Name</label>
-					<div class="input-wrap">
-						<input type="text" class="form-control" [(ngModel)]="user_name"/>
-					</div>
-				</div>
-				<div class="form-group">
-					<label class="control-label">Phone Number</label>
-					<div class="input-wrap">
-						<input type="text" class="form-control" [(ngModel)]="contact"/>
-					</div>
-				</div>
-				<div class="form-group mb-4">
-					<label class="control-label">Password</label>
-					<div class="input-wrap">
-						<input type="password" class="form-control" [(ngModel)]="password"/>
-					</div>
-				</div>
-				<div class="form-group">
-					<button class="btn btn-primary btn-submit" (click)="signupFun()">Signup</button>
+				 </div>
+
+				 <ion-list>
+					<ion-item>
+						<ion-icon name="person" color="light" slot="start"></ion-icon>
+						<ion-label color="light" position="floating">Full Name</ion-label>
+						<ion-input color="light" inputmode="text" [(ngModel)]="profile_name" ></ion-input>
+					</ion-item>
+					<ion-item>
+						<ion-icon name="mail-outline" color="light" slot="start"></ion-icon>
+						<ion-label color="light" position="floating">Enter Email</ion-label>
+						<ion-input color="light" inputmode="email" [(ngModel)]="email"></ion-input>
+					</ion-item>
+					<ion-item>
+						<ion-icon name="person" color="light" slot="start"></ion-icon>
+						<ion-label color="light" position="floating">User Name</ion-label>
+						<ion-input color="light" inputmode="text" [[(ngModel)]="user_name" ></ion-input>
+					</ion-item>
+					<ion-item>
+						<ion-icon name="call-outline" color="light" slot="start"></ion-icon>
+						<ion-label color="light" position="floating">Phone no</ion-label>
+						<ion-input color="light" inputmode="number"  [(ngModel)]="contact"></ion-input>
+					</ion-item>
+					<ion-item>
+						<ion-icon name="lock-closed-outline" color="light" slot="start"></ion-icon>
+						<ion-label color="light" position="floating">Password</ion-label>
+						<ion-input color="light" inputmode="password" [(ngModel)]="password" ></ion-input>
+					</ion-item>
+					<ion-item>
+						<ion-icon name="lock-closed-outline" color="light" slot="start"></ion-icon>
+						<ion-label color="light" position="floating">Confirm Password</ion-label>
+						<ion-input color="light" inputmode="password" [(ngModel)]="password" ></ion-input>
+					</ion-item>
+					
+				</ion-list>
+
+				<div class="my-3">
+					<ion-button expand="block" color="blue"  (click)="signupFun()">Signup</ion-button>
 				</div>
 			</div>
-			<!-- <div class="or-separator">
+			<div class="or-separator">
 				<div class="or"><span>or</span></div>
-				<div class="or-separator-text">Signup using</div>
-			</div> -->
-			<!-- <div class="social-login">
-				<button class="btn-social-login" (click)="fbLogin()">
-					<div class="icon"><img src="assets/icon/facebook-icon.svg" alt=""/></div>
-					<div class="btn-text">Facebook</div>
-				</button>
-				<button class="btn-social-login" (click)="doGoogleLogin()">
-					<div class="icon"><img src="assets/icon/google-icon.svg" alt=""/></div>
-					<div class="btn-text">Google</div>
-				</button>
-			</div> -->
-			<!-- <div class="terms">By clicking "<span>Signup</span>", you agree with our <a href="javascript:void(0)" class="links" target="_blank">Terms & Conditions</a>. Learn how we process your data in our <a href="javascript:void(0)" class="links" target="_blank">Privacy Policy</a> and <a href="javascript:void(0)" class="links" target="_blank">Cookies Policy</a></div> -->
+			</div>
+
+			<div class="d-flex justify-content-between">
+				<ion-button color="light" class="social-btn"  (click)="doGoogleLogin()"> 
+					<ion-icon name="logo-google"></ion-icon> 
+					Signup using Google 
+				</ion-button>
+				<ion-button  color="facebook" class="social-btn" (click)="fbLogin()"> 
+					<ion-icon name="logo-facebook"></ion-icon>
+					 Signup using Facebook
+				</ion-button>
+			</div>
+
+			<div class="terms">Already have account  <a href="javascript:void(0)" class="links" (click)="segmentChange('signin')">Sign in</a></div>
 		</div>
 	</ng-template>
+
 </ion-content>
+
 <div class=loader *ngIf="showspinner==true">
   <div class="preloader"><span></span><span></span><span></span><span></span><span></span></div>
 </div>
