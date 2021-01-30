@@ -31,3 +31,32 @@ app-home{
   }
   .justify-content-center{justify-content:center !important;}
 }
+
+.flashPage{
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  padding-bottom: 70px;
+  .brand{
+    max-width: 150px; height: auto;
+   img{ width: 100%; height: auto;}
+  }
+  .signinBtn{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-decoration: none;
+    padding: 26px;
+    text-align: center;
+    color: #0d014d;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+   }
+
+}

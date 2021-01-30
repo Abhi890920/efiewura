@@ -88,8 +88,8 @@ ion-header::after{display:none;}
 ion-content{--background: #fff;}
 
 ion-item{--padding-start: 0px;--inner-padding-end: 0px;}
-.item-interactive.ion-valid{--highlight-background: #d88e1a ;}
-.item.item-has-focus ion-label{color: #d88e1a !important;}
+// .item-interactive.ion-valid{--highlight-background: #d88e1a ;}
+// .item.item-has-focus ion-label{color: #d88e1a !important;}
 
 .btn{display: block;padding: 10px 15px;line-height: 1;width: 100%;border-radius: 4px;font-size: 14px;text-transform: capitalize;font-weight: 400;font-family: "Roboto", sans-serif;}
 .btn-primary{background: #0d014d;color: #fff;}
@@ -371,3 +371,54 @@ ion-datetime,ion-select{padding-left: 0;color: #212121;}
 	}
 }
 
+
+:root {
+    --ion-color-gold: #d88e1a;
+    --ion-color-gold-rgb: 216, 142, 26;
+    --ion-color-gold-contrast: #ffffff;
+    --ion-color-gold-contrast-rgb: 255, 255, 255;
+    --ion-color-gold-shade: #d88e1a;
+	--ion-color-gold-tint: #d88e1a;
+	
+	--ion-color-blue: #0d014d;
+    --ion-color-blue-rgb: 13, 1, 77;
+    --ion-color-gold-contrast: #ffffff;
+    --ion-color-gold-contrast-rgb: 255, 255, 255;
+    --ion-color-blue-shade: #0d014d;
+	--ion-color-blue-tint: #0d014d;
+	
+	--ion-color-facebook: #3b5998;
+    --ion-color-facebook-rgb: 59, 89, 252;
+    --ion-color-gold-contrast: #ffffff;
+    --ion-color-gold-contrast-rgb: 255, 255, 255;
+    --ion-color-facebook-shade: #3b5998;
+    --ion-color-facebook-tint: #3b5998;
+}
+.ion-color-gold {
+    --ion-color-base: var(--ion-color-gold) !important;
+    --ion-color-base-rgb: var(--ion-color-gold-rgb) !important;
+    --ion-color-contrast: var(--ion-color-gold-contrast) !important;
+    --ion-color-contrast-rgb: var(--ion-color-gold-contrast-rgb) !important;
+    --ion-color-shade: var(--ion-color-gold-shade) !important;
+    --ion-color-tint: var(--ion-color-gold-tint) !important;
+}
+.ion-color-blue {
+    --ion-color-base: var(--ion-color-blue) !important;
+    --ion-color-base-rgb: var(--ion-color-blue-rgb) !important;
+    --ion-color-contrast: var(--ion-color-blue-contrast) !important;
+    --ion-color-contrast-rgb: var(--ion-color-blue-contrast-rgb) !important;
+    --ion-color-shade: var(--ion-color-blue-shade) !important;
+    --ion-color-tint: var(--ion-color-blue-tint) !important;
+}
+.ion-color-facebook {
+    --ion-color-base: var(--ion-color-facebook) !important;
+    --ion-color-base-rgb: var(--ion-color-facebook-rgb) !important;
+    --ion-color-contrast: var(--ion-color-facebook-contrast) !important;
+    --ion-color-contrast-rgb: var(--ion-color-facebook-contrast-rgb) !important;
+    --ion-color-shade: var(--ion-color-facebook-shade) !important;
+    --ion-color-tint: var(--ion-color-facebook-tint) !important;
+}
+
+.custom-radio .custom-input-label:after{
+	background: #0d014d;
+}
