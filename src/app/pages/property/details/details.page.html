@@ -1,66 +1,67 @@
+<ion-header>
+	<ion-toolbar  color="gold">
+	  <ion-buttons slot="start">
+		<ion-back-button></ion-back-button>
+	  </ion-buttons>
+	  <ion-title>Property Details</ion-title>
+	</ion-toolbar>
+	
+</ion-header>
+
 <ion-content>
-	<ion-header>
-		<div class="header">
-			<ion-toolbar>
-				<ion-buttons slot="start">
-					<div class="back-button" (click)="navPop()"><i class="fal fa-fw fa-long-arrow-left"></i></div>
-				</ion-buttons>
-				<ion-title>Property Details</ion-title>
-				<ion-buttons slot="end" (click)="shareProperty()">
-					<div class="header-button"><i class="fas fa-fw fa-share-alt"></i></div>
-				</ion-buttons>
-			</ion-toolbar>
-		</div>
-	</ion-header>
+
 	<ion-refresher slot="fixed" (ionRefresh)="getPropertyDetails($event,'pull')">
     	<ion-refresher-content></ion-refresher-content>
-  	</ion-refresher>
-	<div class="page-content">
-		<div class="event-image">
-			<div class="image-container">
-				<img src="{{main_image}}" alt="" onError="this.src='assets/images/event.jpg'"/>
-			</div>
+	</ion-refresher>
+
+	<div class="proDetailsCard">
+		<div class="cardImg">
+			<img src="{{main_image}}" alt="" onError="this.src='assets/images/event.jpg'"/>
+			<button class="wishlist" (click)="propertyLike()"><i class="fal fa-fw fa-heart"></i></button>
+			<div class="tag">{{propertyDetails.property_category}}</div>
 		</div>
-		
-		<div class="event-details">
-			<div class="event-particulars">
-				<div class="event-wishlist" (click)="propertyLike()"><i class="fal fa-fw fa-heart"></i></div>
-				<div class="event-title">{{propertyDetails.property_title}}</div>
-				<div class="event-user">
-					<!-- <div class="user-image"><img src="assets/images/user/user-06.jpg" alt=""/></div> -->
-					<div class="user-name">Posted by <span>{{propertyDetails.property_posted_by}} </span></div>
-					<div class="user-name">Contact <span>{{propertyDetails.property_posted_by_contact}}</span></div>
-				</div>
-				<div class="event-user">
-					<div class="user-name">Category <span>{{propertyDetails.property_category}}</span></div>
-				</div>
-				<div class="event-metas">
-					<div class="item">
-						<i class="fas fa-fw fa-bed"></i>
-						<span> {{propertyDetails.property_beds}}</span>
-					</div>
-					<div class="item">
-						<i class="fas fa-fw fa-bath"></i>
-						<span>{{propertyDetails.property_baths}}</span>
-					</div>
-					<div class="item">
-						<i class="fas fa-fw fa-map-marker-alt"></i>
-						<span>{{propertyDetails.property_region}},  {{propertyDetails.property_city}}</span>
-					</div>
-					<div class="item">
-						<i class="fas fa-fw fa-dollar-sign"></i>
-						<span>{{propertyDetails.property_cost}}</span>
-					</div>
-					<!-- <div class="item" *ngIf="tagNames?.length>0">
-						<i class="fas fa-fw fa-tags"></i>
-						<span><ng-container *ngFor="let tag of tagNames">{{tag}}</ng-container></span>
-					</div> -->
+		<div class="cardContent">
+			<h4 class="cardTitle">{{propertyDetails.property_title}}</h4>
+			<div class="textItem location">
+				<div>
+					<ion-icon name="call-outline"></ion-icon>
+					<span>{{propertyDetails.property_region}}, {{propertyDetails.property_city}}</span>
+			    </div>
+				<div class="cost">
+					{{propertyDetails.property_cost}}
 				</div>
 			</div>
-			<div class="event-about">
+			<div class="textItem">
+				<ion-icon name="call-outline"></ion-icon>
+				<span>{{propertyDetails.property_posted_by_contact}}</span>
+			</div>
+			<div class="textItem">
+				<ion-icon name="person-outline"></ion-icon>
+				<span>Posted by <span>{{propertyDetails.property_posted_by}} </span></span>
+			</div>
+			<div class="actionItems">
+				<button class="actionBtn"><ion-icon name="logo-whatsapp"></ion-icon></button>
+				<button class="actionBtn"><ion-icon name="call-outline"></ion-icon></button>
+				<button class="actionBtn"><ion-icon name="location-outline"></ion-icon></button>
+			</div>
+			
+			<div class="metas">
+				<div class="item">
+					<i class="fas fa-bed"></i>
+					<span> {{propertyDetails.property_beds}}</span>
+				</div>
+				<div class="item">
+					<i class="fas fa-bath"></i>
+					<span>{{propertyDetails.property_baths}}</span>
+				</div>
+			</div>
+
+			<div class="cardDetails">
 				<div class="about-title">About The Property</div>
 				<div class="about-text" [innerHTML]="propertyDetails.property_details"></div>
 			</div>
+
 		</div>
 	</div>
+	  
 </ion-content>
