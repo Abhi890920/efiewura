@@ -3,7 +3,7 @@ app-list{
 	ion-header{
 		.header{ border: 0;}
 		.header{
-			ion-toolbar{--background: #ff3a5c;}
+			ion-toolbar{--background: #d88e1a;}
 			ion-toolbar{
 				.toolbar-container .toolbar-content, .topbar-title, ion-title{color: #fff;font-size: 18px;font-family: 'Roboto', sans-serif;;font-weight: 400;text-transform: capitalize;padding: 0;line-height: 1.2;text-align: center;}
 				.back-button{font-size: 24px; color: #fff;}
@@ -13,7 +13,7 @@ app-list{
 	}
 	.page-content{position: relative;padding: 0;background: #fff;min-height: 100%; transition: all 0.3s ease;}
 	.page-content{
-		.search{position: sticky; top: 0; padding: 0 16px 10px; background-color: #ff3a5c; z-index: 2;}
+		.search{position: sticky; top: 0; padding: 0 16px 10px; background-color: #d88e1a; z-index: 2;}
 		.search{
 			.search-content{display: flex;background-color: #fff;overflow: hidden;border-radius: 30px;align-items: center;}
 			.search-content{
@@ -22,16 +22,29 @@ app-list{
 				.input-action{font-size: 16px;width: 36px;height: 36px;display: flex;justify-content: center;align-items: center;color: #777;}
 			}
 		}
-		.event-wrap{position: relative; padding: 0 16px 20px;}
+		.event-wrap{position: relative; padding: 15px;}
 	.event-wrap{
 		.event-heading{font-size: 20px;font-weight: 600;line-height: 1.5;margin: 0 0 10px;}
 		.event-listings{position: relative;}
 		.event-listings{
-			.item{position: relative;background-color: #fff;border-radius: 12px;overflow: hidden;box-shadow: rgba(0,0,0,0.1) 0 2px 10px;}
+			.item{position: relative;background-color: #fff;border-radius:0px;overflow: hidden;box-shadow: rgba(0,0,0,0.1) 0 2px 10px;}
 			.item+.item{margin:20px 0 0;}
 			.item{
-				.item-wishlist{position: absolute;display: flex;width: 64px;height: 22px;background-color: #fff;z-index: 1;justify-content: center;align-items: center;border-radius: 10%;font-size: 16px;top: 17px;right: 16px;color: #ff3a5c;padding-top: 2px;}
-				.item-content{position: relative;}
+				.item-wishlist{
+					position: absolute;
+					display: flex;
+					background-color: #fff;
+					z-index: 1;
+					justify-content: center;
+					align-items: center;
+					font-size: 12px;
+					top: 15px;
+					right: 15px;
+					color: #d88e1a;
+					padding: 0 6px;
+					line-height: 1.7;
+					text-transform: uppercase;
+				}
 				.item-content{
 					.item-image-wrap{position: relative;width: 100%;height: 200px;overflow: hidden;z-index: 0;display: flex;flex-direction: column;padding: 20px;}
 					.item-image-wrap{
@@ -48,7 +61,7 @@ app-list{
 						}
 						.item-particulars{position: relative;color: #fff;margin: auto 0 0;}
 						.item-particulars{
-							.item-subtitle{font-size: 11px;font-weight: 500;color: #8ee7ee;line-height: 1.4;}
+							.item-subtitle{font-size: 11px;font-weight: 500;color: #d88e1a;line-height: 1.4;}
 							.item-title{font-size: 18px;font-weight: 400;line-height: 1.5;}
 							.item-text{font-size: 11px;line-height: 1.2;font-weight: 300;}
 						}
@@ -65,7 +78,7 @@ app-list{
 						.item-location span{font-size: 11px;font-weight: 400; display: block; margin-left: 2px;}
 						.item-action{display: flex;width: 50%;max-width:50%; justify-content: flex-end; align-items: center;padding: 2px 0;}
 						.item-action{
-							.btn-action{font-size: 12px;background-color: #ff3a5c;color: #fff;font-weight: 400;padding: 8px 20px;border-radius: 30px;line-height: 1;}
+							.btn-action{font-size: 12px;background-color: #d88e1a;color: #fff;font-weight: 400;padding: 8px 20px;border-radius: 3px;line-height: 1;}
 						}
 					}
 				}
@@ -78,7 +91,7 @@ app-list{
 .nodata-content{
 	.nodata-wrap{position: relative;margin: auto;text-align: center;}
 	.nodata-wrap{
-		.icon{font-size: 36px;width: 80px;height: 80px;display: flex;justify-content: center;align-items: center;margin: 0 auto 20px;background-color: #fff;border-radius: 50%;box-shadow: rgba(0,0,0,0.05) 0 2px 20px;color: #ff3a5c;}
+		.icon{font-size: 36px;width: 80px;height: 80px;display: flex;justify-content: center;align-items: center;margin: 0 auto 20px;background-color: #fff;border-radius: 50%;box-shadow: rgba(0,0,0,0.05) 0 2px 20px;color: #d88e1a;}
 		.title{font-size: 18px;font-weight: 600;line-height: 1.5;color: #212121;}
 		.text{font-size: 14px;font-weight: 400;line-height: 1.4;margin: 5px 0 0;color: #777;}
 	}

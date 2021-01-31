@@ -8,25 +8,53 @@ import { IonSlides, NavController } from '@ionic/angular';
 })
 export class HomePage {
 currentIndex:any;
+totalIndex:any;
+showspinner = true;
+flashPage = true;
+
+
+ngAfterContentInit() {
+	this.showspinner=false
+}
+
 @ViewChild('slides', {static: false}) slides: IonSlides;
   constructor(public navCtrl:NavController) {}
 
-  	onSlideChanged() {
-  		this.slides.getActiveIndex().then(index => {
-			if (index>2) {
-		      this.currentIndex=2;
+
+	slidesDidLoad() {
+		// console.log('slidesdidload');
+		//this.slides.startAutoplay();
+		this.currentIndex = 0;
+
+		setTimeout(() => {
+			this.flashPage = false
+		}, 3000);
+
+		
+	}
+
+  	onSlideChanged() { 
+		this.slides.getActiveIndex().then(index => {
+			if (index>3) {
+		      this.currentIndex=3;
 		    }
 		    else{
 		       this.currentIndex = index;
 		    }
 		});
 	}
+
+
 	skip(){
-  		this.slides.slideTo(2, 500);
+  		this.slides.slideTo(3, 500);
 	}
 	next() {
     	this.slides.slideNext();
+	}
+	prev() {
+    	this.slides.slidePrev();
   	}
+	  
 	navPage(page){
 		this.navCtrl.navigateForward(page)
 	}
