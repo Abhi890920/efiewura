@@ -4,16 +4,18 @@
       Efiewura
     </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content>
-  <ion-slides pager (ionSlideWillChange)="onSlideChanged()" #slides>
+<div  class="onboardingPanel">
+  <ion-slides pager (ionSlidesDidLoad)="slidesDidLoad()"  (ionSlideWillChange)="onSlideChanged()" #slides>
     <ion-slide>
       <div class="slider">
         <div class="slide-img">
           <img src="assets/imgs/Slides/slide-01.png" alt=""/>
         </div>
         <div class="slide-content">
+          <h4 class="slide-title">Welcome</h4>
           <div class="slide-text">Efiewura is here to offer you easy property listing</div>
         </div> 
       </div>
@@ -24,6 +26,7 @@
           <img src="assets/imgs/Slides/slide-02.png" alt=""/>
         </div>
         <div class="slide-content">
+          <h4 class="slide-title">Buy</h4>
           <div class="slide-text">Get details of property on finger tips</div>
         </div>
       </div>
@@ -34,29 +37,55 @@
           <img src="assets/imgs/Slides/slide-03.png" alt=""/>
         </div>
         <div class="slide-content">
-          <h4 class="slide-title">&nbsp;</h4>
+          <h4 class="slide-title">Sell</h4>
           <div class="slide-text">Lets get started</div>
         </div>
       </div>
     </ion-slide>
+    <ion-slide>
+      <div class="slider">
+        <div class="slide-img">
+          <img src="assets/imgs/Slides/slide-04.png" alt=""/>
+        </div>
+        <div class="slide-content">
+          <h4 class="slide-title">Get started</h4>
+          <button ion-button  class="slide-btn" (click)="navPage('signin-signup')">Explore Property</button> 
+        </div>
+      </div>
+    </ion-slide>
   </ion-slides>
+
+<!-- 
   <div class="page-bottom" *ngIf="currentIndex!=2">
-    <button class="btn-next" (click)="next()"><img src="assets/icon/arrow-right.png" alt=""/></button>
     <button class="btn-skip" (click)="skip()">Skip</button>
   </div>
-    <div class="page-bottom justify-content-center" *ngIf="currentIndex==2">
-    <button ion-button full (click)="navPage('signin-signup')" class="btn-signin">SIGN IN</button> 
-    <button ion-button full (click)="navPage('signin-signup')" class="btn-signup">SIGN UP</button>
-  </div>
-</ion-content> -->
 
-<ion-content>
-  <div class="flashPage">
-    <div class="brand"> <img src="assets/images/efeiwura-logo.png" alt="efeiwura"/> </div>
- 
-    <a href="javascript:void(0)" class="signinBtn" (click)="navPage('signin-signup')"> SIGN IN </a>
+  <div class="page-bottom justify-content-center" *ngIf="currentIndex==2">
+      <button ion-button full (click)="navPage('signin-signup')" class="btn-signin">SIGN IN</button> 
+      <button ion-button full (click)="navPage('signin-signup')" class="btn-signup">SIGN UP</button>
+  </div> -->
+
+  <div class="slideNav">
+    <button class="btnNav btnSkip" *ngIf="currentIndex==0" (click)="skip()">Skip</button>
+    <button class="btnNav btnPrev" *ngIf="currentIndex!=0" (click)="prev()">BACK</button>
+    <button class="btnNav btnNext" *ngIf="currentIndex!=3" (click)="next()">NEXT</button>
   </div>
+
+</div>
+
+<div class="flashPage" *ngIf="flashPage==true">
+  <div class="brand"> 
+    <img src="assets/images/efeiwura-logo.png" alt="efeiwura"/> 
+    <ion-spinner name="dots"></ion-spinner>
+  </div>
+  
+</div>
+
 </ion-content>
+
+
+
+
 
 
 

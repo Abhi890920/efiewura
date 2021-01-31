@@ -1,13 +1,15 @@
 <ion-header>
 	<div class="header">
 		<ion-toolbar>
-			<ion-buttons slot="start">
+			<!-- <ion-buttons slot="start">
 				<div class="blank-button"></div>
-			</ion-buttons>
-			<ion-title>Property List</ion-title>
-			<!-- <ion-buttons slot="end" (click)="filterPage()">
-				<div class="header-button"><i class="fas fa-fw fa-filter"></i></div>
 			</ion-buttons> -->
+			<ion-title slot="start">Property List</ion-title>
+			<ion-buttons slot="end" (click)="filterPage()">
+				<div class="header-button pr-3">
+					<ion-icon name="filter-outline"></ion-icon>
+				</div>
+			</ion-buttons>
 		</ion-toolbar>
 	</div>
 </ion-header>
@@ -30,7 +32,7 @@
 						<div class="item-wishlist">{{property.property_category}}</div>
 						<div class="item-content">
 							<div class="item-image-wrap">
-								<div class="item-image"><img src="{{property.property_images.img1}}" alt="" onError="this.src='assets/images/event.jpg'"/></div>
+								<div class="item-image" (click)="navDetails(property.property_id)"><img src="{{property.property_images.img1}}" alt="" onError="this.src='assets/images/event.jpg'"/></div>
 								<!-- <div class="item-countdown">
 									<div class="countdown">
 										<div class="count">48</div>
@@ -69,7 +71,7 @@
 									<span>{{property.property_region}} {{property.property_city}}</span>
 								</div>
 								<div class="item-action">
-									<div class="btn-action" (click)="navDetails(property.property_id)">Event Detail</div>
+									<div class="btn-action" (click)="navDetails(property.property_id)">View Detail</div>
 								</div>
 							</div>
 						</div>
@@ -120,3 +122,4 @@
 		</div>
 	</div>
 </ion-footer>
+

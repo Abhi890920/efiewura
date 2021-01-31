@@ -29,13 +29,13 @@ body{font-family: 'Roboto', sans-serif;margin: 0; padding: 0; color: #191919;}
 .loader .preloader span:nth-child(5){left:44px;-webkit-animation-delay:.8s;animation-delay:.8s}
 @keyframes bars {
 0%{height:5px;-webkit-transform:translateY(0px);transform:translateY(0px);-webkit-transform:translateY(0px);transform:translateY(0px);background:rgba(255, 58, 92, 0)}
-25%{height:30px;-webkit-transform:translateY(15px);transform:translateY(15px);-webkit-transform:translateY(15px);transform:translateY(15px);background:rgba(255, 58, 92, 1)}
+25%{height:30px;-webkit-transform:translateY(15px);transform:translateY(15px);-webkit-transform:translateY(15px);transform:translateY(15px);background:#d88e1a}
 50%{height:5px;-webkit-transform:translateY(0px);transform:translateY(0px);-webkit-transform:translateY(0px);transform:translateY(0px);background:rgba(255, 58, 92, 0.25)}
 100%{height:5px;-webkit-transform:translateY(0px);transform:translateY(0px);-webkit-transform:translateY(0px);transform:translateY(0px);background:rgba(255, 58, 92,0)}
 }
 @-webkit-keyframes bars {
 0%{height:5px;-webkit-transform:translateY(0px);transform:translateY(0px);background:rgba(255, 58, 92, 0)}
-25%{height:30px;-webkit-transform:translateY(15px);transform:translateY(15px);background:rgba(255, 58, 92, 1)}
+25%{height:30px;-webkit-transform:translateY(15px);transform:translateY(15px);background:#d88e1a}
 50%{height:5px;-webkit-transform:translateY(0px);transform:translateY(0px);background:rgba(255, 58, 92, 0.25)}
 100%{height:5px;-webkit-transform:translateY(0px);transform:translateY(0px);background:rgba(255, 58, 92, 0)}
 }
@@ -71,13 +71,13 @@ ion-header::after{display:none;}
 		.search-button{width: 40px;height: 40px;display: flex;color: #d88e1a; font-size:18px; background-color:transparent;}
 		.search-button i{margin: auto;}
 		.action-button{margin:auto 0;display: flex;background-color: transparent;margin-right: 5px;}
-		.action-button span{margin: auto 0;color: #ff6d72;font-weight: 500;font-size: 14px;}
+		.action-button span{margin: auto 0;color: #d88e1a;font-weight: 500;font-size: 14px;}
 		.refresh-button{width: 30px;height: 40px;display: flex;color: #d88e1a; font-size:18px; background-color:transparent;}
 		.refresh-button i{margin: auto;}
 		.action-menu{margin:auto 0;display: flex;width: 40px;height: 40px;background-color: transparent;margin-right: 5px;font-size: 24px;color: #999;}
 		.action-menu i{margin: auto;}
 		ion-buttons{position: relative;}
-		.dots{position: absolute;top: 50%;right: 8px;width: 6px;height: 6px;background: #ff5a5f;border-radius: 50%;transform: translateY(-50%);}
+		.dots{position: absolute;top: 50%;right: 8px;width: 6px;height: 6px;background: #d88e1a;border-radius: 50%;transform: translateY(-50%);}
 	}
 }
 .header-transparent{
@@ -125,7 +125,7 @@ ion-menu .side-panel .brand .lower-text span{margin: auto 0 0;font-size: 40px;li
 ion-menu .side-panel .brand .lower-text span:nth-child(2){margin: auto 0 0;font-size: 28px;line-height: 30px;font-weight: 800;letter-spacing: 6px;}
 ion-menu .side-panel .menu-list{display: block;margin: 0 0 30px;}
 ion-menu .side-panel .menu-list .item{display: flex;flex-wrap: wrap; padding: 16px;border:solid rgba(0,0,0,0.05); border-width: 1px 0;background: #fff; margin-top:-1px;}
-ion-menu .side-panel .menu-list .item .icon{margin: auto 0;font-size: 24px;color: #ff5a5f; width: 30px;}
+ion-menu .side-panel .menu-list .item .icon{margin: auto 0;font-size: 24px;color: #d88e1a; width: 30px;}
 ion-menu .side-panel .menu-list .item .icon i{margin: auto;}
 ion-menu .side-panel .menu-list .item .item-content{margin: auto 0;padding: 0 10px;width: 100%; max-width: calc(100% - 30px);}
 ion-menu .side-panel .menu-list .item .item-content .item-title{margin: 0 0 4px;font-size: 13px;font-weight: 500;font-family: "Rubik", sans-serif;text-transform: uppercase;color: #212121;}
