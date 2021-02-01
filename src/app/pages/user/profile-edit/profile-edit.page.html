@@ -1,0 +1,83 @@
+<ion-header>
+	<ion-toolbar  color="gold">
+	  <ion-buttons slot="start">
+		<ion-back-button></ion-back-button>
+	  </ion-buttons>
+	  <ion-title>Profile Edit</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	  <ion-refresher slot="fixed" (ionRefresh)="getProfileData($event,'pull')">
+    	<ion-refresher-content></ion-refresher-content>
+	  </ion-refresher>
+	  
+	  <div class="profileCard">
+		  <div class="wallPaper">
+			  <img src="assets/images/pro.jpg" alt="">
+			  <div class="profileImg">
+				<img src="{{userDetails.image}}" alt="" *ngIf="userDetails.image"/>
+				<img src="assets/images/profile.jpg" alt="" *ngIf="!userDetails.image"/>
+				<div class="changeImg" (click)="takePhoto()"><i class="fal fa-fw fa-camera-alt"></i></div>
+			  </div>
+		  </div>
+
+		  <div class="cardNav pt-5">
+			<ion-list>
+				<ion-item >
+					<ion-label position="floating">Name</ion-label>
+					<ion-input [(ngModel)]="userDetails.name"></ion-input>
+				</ion-item>
+				<ion-item >
+					<ion-label position="floating">User Name</ion-label>
+					<ion-input  [(ngModel)]="userDetails.user_name" readonly></ion-input>
+				</ion-item>
+				<ion-item >
+					<ion-label position="floating">Email</ion-label>
+					<ion-input  [(ngModel)]="userDetails.email" readonly></ion-input>
+				</ion-item>
+				<ion-item >
+					<ion-label position="floating">Phone</ion-label>
+					<ion-input type="number" [(ngModel)]="userDetails.phone"></ion-input>
+				</ion-item>
+				
+			</ion-list>
+
+		  </div>
+
+		  <div class="mb-4">
+			<ion-button color="gold" expand="full" (click)="updateProfile()">Update Profile</ion-button>
+		 </div>
+
+	  </div>
+
+
+<!-- <div class="custom-actionsheet" id="confirm-option-picture">
+	<div class="custom-actionsheet-close"></div>
+	<div class="custom-actionsheet-dialog">
+		<div class="custom-actionsheet-content">
+			<div class="custom-actionsheet-header">Options</div>
+			<div class="custom-actionsheet-body">
+				<div class="actionsheet-options">
+					<div class="item" (click)="takePhoto(1)">
+						<div class="item-icon"><i class="fal fa-fw fa-camera"></i></div>
+						<div class="item-title">Camera</div>
+					</div>
+					<div class="item"  (click)="takePhoto(0)">
+						<div class="item-icon"><i class="fal fa-fw fa-images"></i></div>
+						<div class="item-title">Gallery</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> -->
+
+
+</ion-content>
+
+<div class=loader *ngIf="showspinner==true">
+  <div class="preloader"><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+
+
