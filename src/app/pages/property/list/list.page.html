@@ -104,13 +104,16 @@
 </div>
 <ion-footer>
 	<div class="footer-menu">
-		<div class="item active">
+		<div class="item active" (click)="navPage('list')">
 			<div class="item-icon"><i class="fad fa-home"></i></div>
 			<div class="item-title">Home</div>
 		</div>
 		<div class="item">
 			<div class="item-icon"><i class="fad fa-shapes"></i></div>
 			<div class="item-title">Category</div>
+		</div>
+		<div class="item addPro" (click)="navPage('add')">
+			<div class="item-icon"><i class="fas fa-plus"></i></div> 
 		</div>
 		<div class="item">
 			<div class="item-icon"><i class="fad fa-fw fa-comment-alt-lines"></i></div>
@@ -122,4 +125,3 @@
 		</div>
 	</div>
 </ion-footer>
-
