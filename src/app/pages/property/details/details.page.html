@@ -3,7 +3,7 @@
 	  <ion-buttons slot="start">
 		<ion-back-button></ion-back-button>
 	  </ion-buttons>
-	  <ion-title>Property Details</ion-title>
+	  <ion-title>Back</ion-title>
 	</ion-toolbar>
 	
 </ion-header>
@@ -14,7 +14,7 @@
     	<ion-refresher-content></ion-refresher-content>
 	</ion-refresher>
 
-	<div class="proDetailsCard">
+	<div class="proDetailsCard mb-4">
 		<div class="cardImg">
 			<img src="{{main_image}}" alt="" onError="this.src='assets/images/event.jpg'"/>
 			<button class="wishlist" (click)="propertyLike()"><i class="fal fa-fw fa-heart"></i></button>
@@ -24,7 +24,7 @@
 			<h4 class="cardTitle">{{propertyDetails.property_title}}</h4>
 			<div class="textItem location">
 				<div>
-					<ion-icon name="call-outline"></ion-icon>
+					<ion-icon name="location-outline"></ion-icon>
 					<span>{{propertyDetails.property_region}}, {{propertyDetails.property_city}}</span>
 			    </div>
 				<div class="cost">
@@ -63,5 +63,42 @@
 
 		</div>
 	</div>
+
+
+	<div class="userMedia">
+		<div class="mediaImg">
+			<img src="assets/images/profile.jpg" alt="" >
+		</div>
+		<div class="mediaBody">
+			<h4>Kings City Realestate Ltd.</h4>
+			<p><i class="fas fa-map-marker-alt"></i> Location here</p>
+			<p><i class="far fa-phone-alt"></i> 1234567890</p>
+			<span class="virified">Virified</span>
+		</div>
+	</div>
 	  
 </ion-content>
+
+<ion-footer>
+	<div class="footer-menu">
+		<div class="item active" (click)="navPage('list')">
+			<div class="item-icon"><i class="fad fa-home"></i></div>
+			<div class="item-title">Home</div>
+		</div>
+		<div class="item">
+			<div class="item-icon"><i class="fad fa-shapes"></i></div>
+			<div class="item-title">Category</div>
+		</div>
+		<div class="item addPro" (click)="navPage('add')">
+			<div class="item-icon"><i class="fas fa-plus"></i></div> 
+		</div>
+		<div class="item">
+			<div class="item-icon"><i class="fad fa-fw fa-comment-alt-lines"></i></div>
+			<div class="item-title">Messages</div>
+		</div>
+		<div class="item" (click)="navPage('profile')">
+			<div class="item-icon"><i class="fad fa-user"></i></div>
+			<div class="item-title">Profile</div>
+		</div>
+	</div>
+</ion-footer>

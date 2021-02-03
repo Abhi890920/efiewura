@@ -1,9 +1,9 @@
-<ion-header>
+<!-- <ion-header>
 	<div class="header">
 		<ion-toolbar>
-			<!-- <ion-buttons slot="start">
+			<ion-buttons slot="start">
 				<div class="blank-button"></div>
-			</ion-buttons> -->
+			</ion-buttons>
 			<ion-title slot="start">Property List</ion-title>
 			<ion-buttons slot="end" (click)="filterPage()">
 				<div class="header-button pr-3">
@@ -12,19 +12,74 @@
 			</ion-buttons>
 		</ion-toolbar>
 	</div>
-</ion-header>
+</ion-header> -->
+
+<!-- <ion-header>
+	<ion-toolbar>
+		<ion-searchbar animated showCancelButton="focus"></ion-searchbar>
+	</ion-toolbar>
+</ion-header> -->
+
 <div class="alert-html"></div>
 <ion-content>
 	<ion-refresher slot="fixed" (ionRefresh)="getProperty($event,'pull')">
     	<ion-refresher-content></ion-refresher-content>
   	</ion-refresher>
 	<div class="page-content">
-		<!-- <div class="search">
-			<div class="search-content">
-				<div class="input-wrap"><input type="text" class="input-field" placeholder="Search keywords" [(ngModel)]="keyword"/></div>
-				<div class="input-action"><i class="fal fa-fw fa-search"></i></div>
-			</div>
-		</div> -->
+
+		<div class="serschFilter">
+			<ion-searchbar animated showCancelButton="focus" placeholder="Find your search here"></ion-searchbar>
+			<ion-buttons class="filterBtn">
+				<ion-button>
+					<i class="fal fa-sliders-h"></i>
+				</ion-button>
+			</ion-buttons>
+		</div>
+
+		<div class="proWraper"  *ngIf="propertyList?.length>0">
+			<ng-container *ngFor="let property of propertyList">
+
+				<div class="proPanel">
+					<div class="panelHead">
+						<div class="panelImg" (click)="navDetails(property.property_id)">
+							<img src="{{property.property_images.img1}}" alt="" onError="this.src='assets/images/event.jpg'"/>
+						</div>
+						<div class="label ad">Boosted Ad</div>
+						<div class="label rent">For Rent</div>
+						<!-- <div class="label sell">For Sell</div> -->
+						<div class="label photo">4 <i class="far fa-camera"></i></div>
+
+					</div>
+					<div class="panelBody">
+						<div class="locationBtn"><i class="fas fa-map-marker-alt"></i></div>
+						<div class="prolTtle">{{property.property_title}}</div>
+						<div class="proLocation">
+							<i class="fas fa-map-marker-alt"></i>
+							<span>{{property.property_region}} {{property.property_city}}</span>
+						</div>
+						<div class="proCost">{{property.property_cost}}</div>
+
+						<div class="proMeta">
+							<div class="metaItem">
+								<i class="fas fa-bed"></i>
+								<span>{{property.property_beds}} Bed(s)</span>
+							</div>
+							<div class="metaItem">
+								<i class="fas fa-bath"></i>
+								<span>{{property.property_baths}} Bathroom(s)</span>
+							</div>
+							<div class="metaItem postedOn">
+								<span>5 days ago</span>
+							</div>
+						</div>
+					</div>
+				</div>
+		    </ng-container>
+		</div>
+
+
+
+
 		<div class="event-wrap">
 			<div class="event-listings" *ngIf="propertyList?.length>0">
 				<ng-container *ngFor="let property of propertyList">
@@ -32,7 +87,9 @@
 						<div class="item-wishlist">{{property.property_category}}</div>
 						<div class="item-content">
 							<div class="item-image-wrap">
-								<div class="item-image" (click)="navDetails(property.property_id)"><img src="{{property.property_images.img1}}" alt="" onError="this.src='assets/images/event.jpg'"/></div>
+								<div class="item-image" (click)="navDetails(property.property_id)">
+									<img src="{{property.property_images.img1}}" alt="" onError="this.src='assets/images/event.jpg'"/>
+								</div>
 								<!-- <div class="item-countdown">
 									<div class="countdown">
 										<div class="count">48</div>
@@ -80,6 +137,7 @@
 			</div>
 			
 		</div>
+
 		<div class="nodata-content" *ngIf="propertyList?.length==0">
 			<div class="nodata-wrap">
 				<div class="icon"><i class="fal fa-fw fa-receipt"></i></div>
@@ -98,10 +156,15 @@
 	<!-- <ion-infinite-scroll (ionInfinite)="doInfinite($event)" *ngIf="isLastRecord == 1">
 		<ion-infinite-scroll-content></ion-infinite-scroll-content>
 	</ion-infinite-scroll> -->
+
+
+
 </ion-content>
+
 <div class=loader *ngIf="showspinner==true">
   <div class="preloader"><span></span><span></span><span></span><span></span><span></span></div>
 </div>
+
 <ion-footer>
 	<div class="footer-menu">
 		<div class="item active" (click)="navPage('list')">
