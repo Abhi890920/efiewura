@@ -1,5 +1,5 @@
 app-list{
-	ion-header{}
+
 	ion-header{
 		.header{ border: 0;}
 		.header{
@@ -11,6 +11,10 @@ app-list{
 			}
 		}
 	}
+
+
+
+
 	.page-content{position: relative;padding: 0;background: #fff;min-height: 100%; transition: all 0.3s ease;}
 	.page-content{
 		.search{position: sticky; top: 0; padding: 0 16px 10px; background-color: #d88e1a; z-index: 2;}
@@ -86,6 +90,138 @@ app-list{
 		}
 	}
 	}
+
+
+.serschFilter{
+	position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+	z-index: 99;
+	.sc-ion-searchbar-md-h {
+		padding-left: 10px;
+		padding-right: 10px;
+		-webkit-padding-start: 10px;
+		padding-inline-start: 10px;
+		-webkit-padding-end: 10px;
+		padding-inline-end: 10px;
+	}
+	.filterBtn {
+		position: absolute;
+		top: 15px;
+		right: 10px;
+		font-size: 30px;
+		z-index: 9;
+		color: #d88e1a;
+		i{font-size: 28px;}
+	}
+	
+}
+
+.proPanel{
+	position: relative; box-shadow: 0 2px 5px 0 rgb(0 0 0 / 15%); margin-bottom: 15px;
+	.panelHead{
+		position: relative; padding: 0 15px;
+		.panelImg{
+			position: relative; height: 120px; border-radius: 10px; overflow: hidden;
+			img{ width: 100%; height: 100%; object-fit: cover;  }
+		}
+		.label{
+			position: absolute; font-size: 10px; color: #fff; padding: 5px 10px; z-index: 9;
+			&.ad{ right: 30px; top: 15px; background: #d88e1a; }
+			&.rent{left: 30px; top: 15px; background: #d88e1a;}
+			&.sell{left: 30px; top: 15px; background: #0d014d;}
+			&.photo{left: 30px; bottom: 15px; background: #0d014d96;
+			i{ font-size: 12px; margin-left: 5px;}
+		    }
+	   }
+    }
+	.panelBody{
+		padding: 15px; position: relative;
+		.locationBtn{
+			width: 35px;
+			height: 35px;
+			border-radius: 50%;
+			text-align: center;
+			line-height: 35px;
+			font-size: 16px;
+			background-color: #d88e1a;
+			color: #0d014d;
+			position: absolute;
+			top: -20px;
+			right: 20px;
+			z-index: 9;
+			box-shadow: 0 2px 5px 0 rgb(0 0 0 / 20%), 0 2px 10px 0 rgb(0 0 0 / 10%);
+		}
+		.prolTtle{ font-size: 14px; margin-bottom: 5px; color: #333;}
+		.proLocation{ font-size: 12px; color: #777;
+			i{ color: #d88e1a; font-size: 14px; margin-right: 10px;}
+	    }
+		.proCost{position: absolute; top: 40px; right: 15px; font-size: 14px; font-weight: 500; color: #262626;}
+
+		.proMeta{
+			margin-top: 10px; position: relative;
+			display: flex; 
+			.metaItem{
+				font-size: 14px;
+				i{ color: #d88e1a; font-size: 16px; margin-right: 10px;}
+				&.postedOn{
+					position: absolute; right: 0;
+					top: 50%; transform: translateY(-50%);
+					color: #777; font-size: 13px;
+				}
+			}
+			.metaItem + .metaItem{ margin-left: 20px;}
+		}
+	}
+}
+
+.proPanel:first-child{
+	 box-shadow: none;
+	.panelHead{
+		 padding: 0 0px;
+		.panelImg{
+			height: 320px;  border-radius: 0px;  
+		}
+		.label{
+			&.ad{ right: 15px; top: 70px; }
+			&.rent{left: 15px; top: 70px;}
+			&.sell{right: 15px; top: 70px;}
+			&.photo{display: none;}
+	   }
+    }
+	.panelBody{
+		position: absolute;
+		z-index: 1;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		color: #fff;
+		.locationBtn{
+			top: -30px;
+		}
+		.prolTtle{color: #fff;}
+		.proLocation{  color: #fff;
+			i{ color: #d88e1a; }
+	    }
+		.proCost{ color: #fff;}
+		.proMeta{
+			border-top: 1px solid #fff;
+			padding-top: 10px;
+			.metaItem{
+				&.postedOn{
+					color: #ddd; 
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
 }
 .nodata-content{position: fixed;top: 0;left: 0;width: 100%;height: 100%;display: flex;justify-content: center;align-items: center;background-color: transparent;}
 .nodata-content{
