@@ -24,6 +24,11 @@ firebaseId:any;
   ngOnInit() {
     this.setUpPushNotification()
   }
+
+  navPage(page){
+		this.navCtrl.navigateForward(page)
+	}
+  
   connectMethod(type){
     this.user_type=type
   }
