@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { ToastController, NavController } from '@ionic/angular';
+import { ToastController, NavController, ActionSheetController, ModalController  } from '@ionic/angular';
 import { HttpService } from '../../../HttpService/http.service';
+import { LoginModalPage } from '../../../modals/login-modal/login-modal.page';
 @Component({
   selector: 'app-list',
   templateUrl: './list.page.html',
@@ -8,13 +9,18 @@ import { HttpService } from '../../../HttpService/http.service';
   encapsulation:ViewEncapsulation.None
 })
 export class ListPage implements OnInit {
-propertyList:any;
-lastID:any;
-showspinner=false
-  constructor(public httpService:HttpService,public toastController: ToastController,public navCtrl:NavController) { }
+
+  propertyList:any;
+  lastID:any;
+  showspinner=false
+
+  constructor(public httpService:HttpService,public toastController: ToastController,public navCtrl:NavController, private actionSheet: ActionSheetController, public modalController: ModalController) { }
+
+
 
   ngOnInit() {
-  	this.getProperty('','normal')
+    this.getProperty('','normal');
+    this.openModal()
   }
   navPage(page){
     this.navCtrl.navigateForward(page)
@@ -73,5 +79,22 @@ showspinner=false
     });
     toast.present();
   }
+
+  async openModal() {
+    const modal = await this.modalController.create({
+      component: LoginModalPage,
+      cssClass: 'logRegModal',
+      swipeToClose: true,
+      presentingElement: await this.modalController.getTop(),
+      componentProps: { }
+    });
+
+    modal.onDidDismiss().then(() => {
+     
+    });
+
+    return await modal.present();
+  }
+
 
 }

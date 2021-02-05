@@ -1,0 +1,48 @@
+<!-- my-modal.page.html -->
+
+<ion-content>
+
+<div class="logRegBody">
+
+  <div class="mb-4">
+    <button class="btn btn-white btn-block btn-lg" (click)="doGoogleLogin()">
+      <i class="fab fa-google"></i>
+      Signup using Google 
+    </button>
+  </div>
+
+  <div class="mb-4">
+    <button class="btn btn-fb btn-block btn-lg" (click)="fbLogin()">
+      <i class="fab fa-facebook-f"></i>
+      Signup using Facebook
+    </button>
+  </div>
+
+  <div class="mb-4">
+    <button class="btn btn-primary btn-lg" (click)="navPage('signin-signup')">
+      Signin Using E-mail or Phone
+    </button>
+  </div>
+
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col text-center>
+        <div class="text">
+        Don't have an account? <span (click)="navPage('signin-signup')"> Sign Up </span>
+      </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col text-center>
+        <div class="text">
+        By signing up you agree to the <span>Terms and Conditions</span> of services by EfiEwura Company Limited.
+      </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</div>
+
+</ion-content>

@@ -1,18 +1,83 @@
 <ion-header>
-	<div class="header">
-		<ion-toolbar>
-			<ion-buttons slot="start">
-				<div class="back-button" (click)="navPop()">
-					<i class="far fa-fw fa-chevron-left"></i>
-				</div>
-			</ion-buttons>
-			<ion-title>Property Add</ion-title>
-		</ion-toolbar>
-	</div>
+	<ion-toolbar  color="gold">
+	  <ion-buttons slot="start">
+		<ion-back-button></ion-back-button>
+	  </ion-buttons>
+	  <ion-title >Creat Post</ion-title>
+	</ion-toolbar>
 </ion-header>
 
-<ion-content>
-	<div class="page-content">
+
+<ion-content class="ion-padding">
+
+
+	<div class="checkGroup">
+		<div class="checkLabel">
+			<input type="radio" checked name="radio" id="radio1">
+			<label for="radio1">For Rent</label>
+	    </div>
+		<div class="checkLabel">
+			<input type="radio" name="radio" id="radio2">
+			<label for="radio2">For Sale</label>
+	    </div>
+	</div>
+
+	<div class="form-group">
+		<select class="form-control">
+			<option>Select Property type</option>
+			<option>Select Property type</option>
+			<option>Select Property type</option>
+			<option>Select Property type</option>
+		</select>
+	</div>
+	<div class="form-group">
+		<button class="btn btn-secondary btn-block ">Use current location</button>
+	</div>
+	<div class="form-group">
+		<div class="photoGal">
+			<div class="uploadInfo">
+				<i class="fas fa-camera"></i>
+				<p>Maximum 7 image(png,jpg)</p>
+			</div>
+			<div class="photoAlbum">
+				<img src="../../../../assets/images/pro.jpg">
+			</div>
+		</div>
+		<input type="file" id="file" class="d-none">
+		<label for="file" class="btn btn-secondary btn-block">Add Image</label>
+	</div>
+
+	<div class="form-group">
+		<label class="control-label">Price</label>
+		<div class="priceSelectBox">
+			<select>
+				<option>GHS</option>
+				<option>GHS</option>
+				<option>GHS</option>
+			</select>
+			<input type="text" placeholder="0.00">
+		</div>
+
+	</div>
+	<div class="form-group">
+		<label class="control-label">Description</label>
+		<textarea class="form-control" placeholder=""></textarea>
+	</div>
+
+	<div class="userMedia">
+		<div class="mediaImg">
+			<img src="../../../../assets/images/profile.jpg" alt="" >
+		</div>
+		<div class="mediaBody">
+			<h4>Kings City Realestate Ltd.</h4>
+			<p><i class="fas fa-map-marker-alt"></i> Location here</p>
+			<p><i class="far fa-phone-alt"></i> 1234567890</p>
+			<span class="virified">Virified</span>
+		</div>
+	</div>
+
+
+	<!-- <div class="page-content">
 		<div class="form-content">
 			<ion-item>
 				<ion-label>Select Category</ion-label>
@@ -128,13 +193,14 @@
 			</div>
 			<input type="file" class="" id="profilePicture" (change)="onFileChange($event)">
 		</div>
-	</div>
+	</div> -->
 </ion-content>
 <div class=loader *ngIf="showspinner==true">
   <div class="preloader"><span></span><span></span><span></span><span></span><span></span></div>
 </div>
+
 <ion-footer>
 	<div class="page-action">
-		<button class="btn btn-primary btn-action" (click)="addProperty()">Save</button>
+		<button class="btn btn-secondary btn-action" (click)="addProperty()">Save</button>
 	</div>
 </ion-footer>
