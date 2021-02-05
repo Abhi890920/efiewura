@@ -1,0 +1,12 @@
+.messageInputBox{
+    padding: 10px 10px 30px;
+    background: #fff;
+}
+.messageInput{
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 20%), 0 2px 10px 0 rgb(0 0 0 / 10%);
+    .form-control{ 
+        border: 0; height: 50px; width: 100%; padding: 10px;
+        background: #fff; color: #333; font-size: 15px;
+
+    }
+}

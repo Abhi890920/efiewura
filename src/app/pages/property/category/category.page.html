@@ -1,0 +1,83 @@
+<ion-header>
+	<ion-toolbar  color="gold">
+	  <ion-buttons slot="start">
+		<ion-back-button></ion-back-button>
+	  </ion-buttons>
+	  <ion-title >Category</ion-title>
+	</ion-toolbar>
+
+  <ion-toolbar>
+   <ion-list lines="none">
+    <ion-item>
+      <ion-label>Select Category</ion-label>
+      <ion-select value="all" okText="Okay" cancelText="Dismiss">
+        <ion-select-option value="all">All</ion-select-option>
+        <ion-select-option value="blonde">Blonde</ion-select-option>
+        <ion-select-option value="black">Black</ion-select-option>
+        <ion-select-option value="red">Red</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content >
+
+  <ion-list >
+    <ion-item button detail>
+      <ion-label> For rent</ion-label>
+      <ion-note slot="end" color="blue">20</ion-note>
+    </ion-item>
+    <ion-item button detail>
+      <ion-label> For sell</ion-label>
+      <ion-note slot="end" color="blue">20</ion-note>
+    </ion-item>
+    <ion-item button detail>
+      <ion-label> For rent</ion-label>
+      <ion-note slot="end" color="blue">21</ion-note>
+    </ion-item>
+    <ion-item button detail>
+      <ion-label> For sell</ion-label>
+      <ion-note slot="end" color="blue">42</ion-note>
+    </ion-item>
+    <ion-item button detail>
+      <ion-label> For rent</ion-label>
+      <ion-note slot="end" color="blue">01</ion-note>
+    </ion-item>
+    <ion-item button detail>
+      <ion-label> For sell</ion-label>
+      <ion-note slot="end" color="blue">05</ion-note>
+    </ion-item>
+
+
+  </ion-list>
+
+ 
+</ion-content>
+
+<ion-footer>
+	<div class="footer-menu">
+		<div class="item " (click)="navPage('list')">
+			<div class="item-icon"><i class="fad fa-home"></i></div>
+			<div class="item-title">Home</div>
+		</div>
+		<div class="item active"  (click)="navPage('category')">
+			<div class="item-icon"><i class="fad fa-shapes"></i></div>
+			<div class="item-title">Category</div>
+		</div>
+		<div class="item addPro" (click)="navPage('add')">
+			<div class="item-icon"><i class="fas fa-plus"></i></div> 
+		</div>
+		<div class="item " (click)="navPage('messages')">
+			<div class="item-icon"><i class="fad fa-fw fa-comment-alt-lines"></i></div>
+			<div class="item-title">Messages</div>
+		</div>
+		<div class="item" (click)="navPage('profile')">
+			<div class="item-icon"><i class="fad fa-user"></i></div>
+			<div class="item-title">Profile</div>
+		</div>
+	</div>
+</ion-footer>
+

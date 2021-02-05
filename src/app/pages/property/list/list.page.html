@@ -1,24 +1,4 @@
-<!-- <ion-header>
-	<div class="header">
-		<ion-toolbar>
-			<ion-buttons slot="start">
-				<div class="blank-button"></div>
-			</ion-buttons>
-			<ion-title slot="start">Property List</ion-title>
-			<ion-buttons slot="end" (click)="filterPage()">
-				<div class="header-button pr-3">
-					<ion-icon name="filter-outline"></ion-icon>
-				</div>
-			</ion-buttons>
-		</ion-toolbar>
-	</div>
-</ion-header> -->
 
-<!-- <ion-header>
-	<ion-toolbar>
-		<ion-searchbar animated showCancelButton="focus"></ion-searchbar>
-	</ion-toolbar>
-</ion-header> -->
 
 <div class="alert-html"></div>
 <ion-content>
@@ -171,14 +151,14 @@
 			<div class="item-icon"><i class="fad fa-home"></i></div>
 			<div class="item-title">Home</div>
 		</div>
-		<div class="item">
+		<div class="item"  (click)="navPage('category')">
 			<div class="item-icon"><i class="fad fa-shapes"></i></div>
 			<div class="item-title">Category</div>
 		</div>
 		<div class="item addPro" (click)="navPage('add')">
 			<div class="item-icon"><i class="fas fa-plus"></i></div> 
 		</div>
-		<div class="item">
+		<div class="item" (click)="navPage('messages')">
 			<div class="item-icon"><i class="fad fa-fw fa-comment-alt-lines"></i></div>
 			<div class="item-title">Messages</div>
 		</div>
